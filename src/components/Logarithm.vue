@@ -1,32 +1,16 @@
 <template>
   <div class="row justify-content-around">
-    <div class="col-md-4 border-left border-right">
-        <h3 class="font-weight-light text-success">Logaritma</h3>
-        <h5 class="font-weight-light">Kurallar</h5>
+    <div class="col-md-4">
+      <h3 class="font-weight-light text-success">Logaritma</h3>
+      <h5 class="font-weight-light">Kurallar</h5>
+      <p></p>
     </div>
-    <div class="target border-top border-bottom col-md-4">
-      <br>
-        <div>
-          <p class="font-weight-light text-success">- Soru 1 -</p>
-          <appSection :latexFormula="formula1" :latexFormulaSol="formula1s"></appSection>
-        </div>
-        <div>
-          <p class="font-weight-light text-success">Soru 2</p>
-          <appSection :latexFormula="formula2" :latexFormulaSol="formula2s"></appSection>
-        </div>
-        <div id="q3">
-          <p class="font-weight-light text-success">Soru 3</p>
-          <appSection :latexFormula="formula3" :latexFormulaSol="formula3s"></appSection>
-        </div>
-        <div id="q4">
-          <p class="font-weight-light text-success">Soru 4</p>
-          <appSection :latexFormula="formula4" :latexFormulaSol="formula4s"></appSection>
-        </div>
-
-        
-    </div>
-    <div class="col-md-4 border-left border-right">
-      right
+    <div class="col-md-8 border-left">
+      
+      <appSection :latexFormula="formula1" :latexFormulaSol="formula1s" :qNum="1"></appSection>
+      <appSection :latexFormula="formula2" :latexFormulaSol="formula2s" :qNum="2"></appSection>
+      <appSection :latexFormula="formula3" :latexFormulaSol="formula3s" :qNum="3"></appSection>
+      <appSection :latexFormula="formula4" :latexFormulaSol="formula4s" :qNum="4"></appSection>
     </div>
   </div>
 </template>
@@ -67,5 +51,4 @@ export default {
 .target > div:target {
   display: block;
 }
-
 </style>

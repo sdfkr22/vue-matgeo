@@ -15,7 +15,7 @@ Vue.use(VueKatex, {
 
 const router = new VueRouter({
   routes,
-  mode : 'history'
+  mode : 'hash'
 });
 
 new Vue({

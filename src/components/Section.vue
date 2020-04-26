@@ -1,17 +1,28 @@
 <template>
-  <div>
-    <div v-katex="latexFormula"></div>
+<div>
+  <br>
+ 
+<h5 class="font-weight-light text-success"> Soru {{qNum}} :</h5>
+  <div class="row border-bottom">
+   
+    
+    <div class="col">
+      <div v-katex="latexFormula"></div>
     <br />
     <br />
-    <button class="btn btn-primary" @click="show=!show">Çözümü Göster</button>
+    </div>
+    <div class="col-3">
+       <button class="btn" :class="btncolor" @click="showHideSolution">{{buttonText}}</button>
     <br />
     <br />
-    <div v-if="show" class="solution">
-      <br />
+    </div>
+    <div class="col">
+      <div v-if="show" class="solution">
       <div v-katex="latexFormulaSol"></div>
     </div>
-    <br />
+    </div>
   </div>
+</div>
 </template>
 <script>
 export default {
@@ -19,12 +30,29 @@ export default {
 
   data() {
     return {
-      show: false
+      show: false,
+      buttonText: "Çözümü Göster",
+      btncolor: "btn-primary",
     };
   },
   props: {
+    qNum: "",
     latexFormula: "",
     latexFormulaSol: ""
+  },
+  methods:{
+    showHideSolution(){
+      this.show=!this.show;
+      if(this.show)
+      {
+        this.buttonText="Çözümü Gizle"
+        this.btncolor="btn-danger"
+      }
+      else{
+        this.buttonText="Çözümü Göster"
+         this.btncolor="btn-primary"
+      }
+    }
   }
 };
 </script>
